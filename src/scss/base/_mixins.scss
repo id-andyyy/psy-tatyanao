@@ -1,0 +1,5 @@
+@function adaptive-value($max-value, $min-value, $max-size: $max-width, $min-size: $min-width) {
+  @return calc(
+    #{$min-value + px} + (($max-value - $min-value) * ((100vw - #{$min-size + px}) / ($max-size - $min-size)))
+  );
+}

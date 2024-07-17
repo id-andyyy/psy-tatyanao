@@ -1,1 +1,12 @@
-@import "./blocks/*.scss";
+@import "./**/*.scss";
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: $main-color;
+}
+
+.container {
+  max-width: #{$container-width + px};
+  margin: 0 auto;
+  padding: 0 10px;
+}
