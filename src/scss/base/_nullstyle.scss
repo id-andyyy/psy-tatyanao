@@ -62,11 +62,13 @@ address {
 input,
 textarea,
 button,
-select {
+select,
+a {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 input::-ms-clear {
