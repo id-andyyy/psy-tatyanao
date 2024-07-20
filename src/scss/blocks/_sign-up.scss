@@ -1,0 +1,9 @@
+.sign-up {
+  &__btn {
+    font-size: adaptive-value(16, 15);
+    color: $light-color;
+    font-weight: 600;
+    background-color: $accent-color;
+    padding: 15px adaptive-value(30, 16);
+  }
+}

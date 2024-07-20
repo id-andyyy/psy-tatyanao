@@ -1,0 +1,10 @@
+.spacer {
+  display: flex;
+  justify-content: center;
+  margin: adaptive-value(100, 50) 0;
+  &__line {
+    background-color: $main-color;
+    width: adaptive-value(400, 190);
+    height: 1px;
+  }
+}

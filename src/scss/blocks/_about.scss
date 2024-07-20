@@ -1,0 +1,52 @@
+.about {
+  &__grid {
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+      "title photo"
+      "description photo"
+      "sign-up photo";
+    column-gap: 20px;
+    height: calc(100vh - 100px);
+    max-height: 832px;
+  }
+
+  &__title {
+    grid-area: title;
+    font-weight: 600;
+  }
+
+  &__subheading {
+    font-size: adaptive-value(30, 22);
+    color: $accent-color;
+  }
+
+  &__heading {
+    font-size: adaptive-value(60, 40);
+    color: $main-color;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-size: adaptive-value(16, 14);
+    font-weight: 500;
+    grid-area: description;
+    max-width: 540px;
+  }
+
+  &__photo {
+    grid-area: photo;
+    height: 100%;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__sign-up {
+    grid-area: sign-up;
+  }
+}

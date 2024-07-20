@@ -1,6 +1,7 @@
 .header {
   position: fixed;
-  background-color: white;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.5);
   width: 100%;
   padding: 19px 0;
   &__row {
@@ -8,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: #{$tablet-width + px}) {
+    @media (max-width: #{$laptop-width - 1 + px}) {
       margin: 0 10px;
     }
   }
@@ -27,7 +28,7 @@
 .menu {
   flex-grow: 1;
 
-  @media (max-width: #{$tablet-width + px}) {
+  @media (max-width: #{$laptop-width - 1 + px}) {
     display: flex;
     justify-content: flex-end;
   }
@@ -35,7 +36,7 @@
   &__icon {
     display: none;
 
-    @media (max-width: #{$tablet-width + px}) {
+    @media (max-width: #{$laptop-width - 1 + px}) {
       $burger-width: 40px;
 
       $burger-icon-line-height: 3px;
@@ -103,7 +104,7 @@
   }
 
   &__body {
-    @media (max-width: #{$tablet-width + px}) {
+    @media (max-width: #{$laptop-width - 1 + px}) {
       position: absolute;
       bottom: 100%;
       left: 0;
@@ -125,7 +126,7 @@
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: #{$tablet-width + px}) {
+    @media (max-width: #{$laptop-width - 1 + px}) {
       flex-direction: column;
       margin: auto;
       row-gap: 60px;
@@ -138,7 +139,7 @@
   display: flex;
   column-gap: 15px;
 
-  @media (max-width: #{$tablet-width + px}) {
+  @media (max-width: #{$laptop-width - 1 + px}) {
     flex-direction: column;
     row-gap: 20px;
   }
@@ -153,7 +154,7 @@
     color: $main-color;
     transition: all 0.2s;
 
-    @media (max-width: #{$tablet-width + px}) {
+    @media (max-width: #{$laptop-width - 1 + px}) {
       color: $light-color;
       font-size: 30px;
     }
@@ -174,7 +175,7 @@
   display: flex;
   column-gap: 12px;
 
-  @media (max-width: #{$tablet-width + px}) {
+  @media (max-width: #{$laptop-width - 1 + px}) {
     justify-content: center;
     column-gap: 20px;
   }
@@ -194,14 +195,14 @@
       transform: scale(1.2);
     }
 
-    @media (max-width: #{$tablet-width + px}) {
-      height: adaptive-value(30, 25, $tablet-width, $min-width);
+    @media (max-width: #{$laptop-width - 1 + px}) {
+      height: adaptive-value(30, 25, $laptop-width, $min-width);
     }
 
     & img {
       height: 100%;
 
-      @media (max-width: #{$tablet-width + px}) {
+      @media (max-width: #{$laptop-width - 1 + px}) {
         filter: brightness(10000%);
       }
     }
