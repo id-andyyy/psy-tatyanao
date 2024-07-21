@@ -1,0 +1,7 @@
+.section-title {
+  font-size: adaptive-value(35, 25);
+  font-weight: 600;
+  color: $accent-color;
+  text-align: center;
+  margin: 0 0 adaptive-value(50, 25) 0;
+}

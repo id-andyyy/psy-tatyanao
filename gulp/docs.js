@@ -17,7 +17,6 @@ const webpCss = require('gulp-webp-css');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 
-
 const server = require('gulp-server-livereload');
 const clean = require('gulp-clean');
 const fs = require('fs');
@@ -76,7 +75,7 @@ gulp.task('img:docs', function () {
     .pipe(changed('./docs/img/'))
     .pipe(webp())
     .pipe(gulp.dest('./docs/img/'))
-    .pipe(gulp.src('./src/img/*', { encoding: false }))
+    .pipe(gulp.src('./src/img/**/*', { encoding: false }))
     .pipe(changed('./docs/img/'))
     .pipe(imagemin({ verbose: true }))
     .pipe(gulp.dest('./docs/img/'));

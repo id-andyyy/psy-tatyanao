@@ -1,5 +1,6 @@
 .sign-up {
   &__btn {
+    display: inline-block;
     font-size: adaptive-value(16, 15);
     color: $light-color;
     font-weight: 600;
