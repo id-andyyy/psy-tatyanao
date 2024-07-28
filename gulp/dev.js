@@ -31,8 +31,8 @@ const fileIncludeConfig = {
 gulp.task('html:dev', function () {
   return gulp
     .src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
-    .pipe(changed('./build/', { hasChanged: changed.compareContents }))
     .pipe(plumber(getPlumberConfig('HTML')))
+    .pipe(changed('./build/', { hasChanged: changed.compareContents }))
     .pipe(fileInclude(fileIncludeConfig))
     .pipe(gulp.dest('./build/'));
 });
@@ -40,8 +40,8 @@ gulp.task('html:dev', function () {
 gulp.task('sass:dev', function () {
   return gulp
     .src('./src/scss/*.scss')
-    .pipe(changed('./build/css/'))
     .pipe(plumber(getPlumberConfig('SCSS')))
+    .pipe(changed('./build/css/'))
     .pipe(sourceMaps.init())
     .pipe(sassGlob())
     .pipe(sass())
@@ -52,6 +52,7 @@ gulp.task('sass:dev', function () {
 gulp.task('img:dev', function () {
   return gulp
     .src('./src/img/**/*', { encoding: false })
+    .pipe(plumber(getPlumberConfig('Images')))
     .pipe(changed('./build/img/'))
     .pipe(imagemin({ verbose: true }))
     .pipe(gulp.dest('./build/img/'));
@@ -60,8 +61,8 @@ gulp.task('img:dev', function () {
 gulp.task('js:dev', function () {
   return gulp
     .src('./src/js/*.js')
-    .pipe(changed('./build/js/'))
     .pipe(plumber(getPlumberConfig('JS')))
+    .pipe(changed('./build/js/'))
     .pipe(babel())
     .pipe(webpack(require('./../webpack.config')))
     .pipe(gulp.dest('./build/js/'));

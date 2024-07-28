@@ -17,6 +17,7 @@ const webpCss = require('gulp-webp-css');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 
+// Other
 const server = require('gulp-server-livereload');
 const clean = require('gulp-clean');
 const fs = require('fs');
@@ -47,8 +48,8 @@ const fileIncludeConfig = {
 gulp.task('html:docs', function () {
   return gulp
     .src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
-    .pipe(changed('./docs/'))
     .pipe(plumber(getPlumberConfig('HTML')))
+    .pipe(changed('./docs/'))
     .pipe(fileInclude(fileIncludeConfig))
     .pipe(webpHtml())
     .pipe(htmlclean())
@@ -58,13 +59,13 @@ gulp.task('html:docs', function () {
 gulp.task('sass:docs', function () {
   return gulp
     .src('./src/scss/*.scss')
-    .pipe(changed('./docs/css/'))
     .pipe(plumber(getPlumberConfig('SCSS')))
-    .pipe(autoprefixer())
+    .pipe(changed('./docs/css/'))
     .pipe(sassGlob())
-    .pipe(webpCss())
     .pipe(groupMedia())
     .pipe(sass())
+    .pipe(webpCss())
+    .pipe(autoprefixer())
     .pipe(csso())
     .pipe(gulp.dest('./docs/css/'));
 });
@@ -72,24 +73,30 @@ gulp.task('sass:docs', function () {
 gulp.task('img:docs', function () {
   return gulp
     .src('./src/img/**/*', { encoding: false })
-    .pipe(changed('./docs/img/'))
-    .pipe(webp())
-    .pipe(gulp.dest('./docs/img/'))
-    .pipe(gulp.src('./src/img/**/*', { encoding: false }))
+    .pipe(plumber(getPlumberConfig('Images')))
     .pipe(changed('./docs/img/'))
     .pipe(imagemin({ verbose: true }))
+    .pipe(gulp.dest('./docs/img/'))
+});
+
+gulp.task('webp:docs', function () {
+  return gulp
+    .src('./src/img/**/*.+(png|jpg|jpeg)', { encoding: false })
+    .pipe(plumber(getPlumberConfig('Webp')))
+    .pipe(changed('./docs/img/'))
+    .pipe(webp())
     .pipe(gulp.dest('./docs/img/'));
 });
 
 gulp.task('js:docs', function () {
   return gulp
     .src('./src/js/*.js')
-    .pipe(changed('./docs/js/'))
     .pipe(plumber(getPlumberConfig('JS')))
+    .pipe(changed('./docs/js/'))
     .pipe(babel())
     .pipe(webpack(require('../webpack.config')))
     .pipe(gulp.dest('./docs/js/'));
-})
+});
 
 gulp.task('clean:docs', function (done) {
   if (fs.existsSync('./docs/')) {
