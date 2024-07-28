@@ -2,8 +2,9 @@ const gulp = require('gulp');
 
 // HTML
 const fileInclude = require('gulp-file-include');
-const htmlclean = require('gulp-htmlclean');
+const typograf = require('gulp-typograf');
 const webpHtml = require('gulp-webp-html');
+const htmlclean = require('gulp-htmlclean');
 
 // SASS
 const sass = require('gulp-sass')(require('sass'));
@@ -11,7 +12,6 @@ const sassGlob = require('gulp-sass-glob');
 const csso = require('gulp-csso');
 const autoprefixer = require('gulp-autoprefixer');
 const groupMedia = require('gulp-group-css-media-queries');
-const webpCss = require('gulp-webp-css');
 
 // Images
 const imagemin = require('gulp-imagemin');
@@ -52,6 +52,16 @@ gulp.task('html:docs', function () {
     .pipe(plumber(getPlumberConfig('html:docs')))
     .pipe(changed('./docs/'))
     .pipe(fileInclude(fileIncludeConfig))
+    .pipe(
+      typograf({
+        locale: ['ru', 'en-US'],
+        htmlEntity: { type: 'digit' },
+        safeTags: [
+          ['<\\?php', '\\?>'],
+          ['<no-typography>', '</no-typography>'],
+        ],
+      })
+    )
     .pipe(webpHtml())
     .pipe(htmlclean())
     .pipe(gulp.dest('./docs/'));
@@ -65,7 +75,6 @@ gulp.task('sass:docs', function () {
     .pipe(sassGlob())
     .pipe(groupMedia())
     .pipe(sass())
-    .pipe(webpCss())
     .pipe(autoprefixer())
     .pipe(csso())
     .pipe(gulp.dest('./docs/css/'));
@@ -76,7 +85,13 @@ gulp.task('img:docs', function () {
     .src('./src/img/**/*', { encoding: false })
     .pipe(plumber(getPlumberConfig('img:docs')))
     .pipe(changed('./docs/img/'))
-    .pipe(imagemin({ verbose: true }))
+    .pipe(imagemin(
+      [
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.mozjpeg({ quality: 85, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+      ],
+      { verbose: true }))
     .pipe(gulp.dest('./docs/img/'))
 });
 

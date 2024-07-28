@@ -2,6 +2,7 @@ const gulp = require('gulp');
 
 // HTML
 const fileInclude = require('gulp-file-include');
+const typograf = require('gulp-typograf');
 
 // SASS
 const sass = require('gulp-sass')(require('sass'));
@@ -47,6 +48,16 @@ gulp.task('html:dev', function () {
     .pipe(plumber(getPlumberConfig('html:dev')))
     .pipe(changed('./build/', { hasChanged: changed.compareContents }))
     .pipe(fileInclude(fileIncludeConfig))
+    .pipe(
+      typograf({
+        locale: ['ru', 'en-US'],
+        htmlEntity: { type: 'digit' },
+        safeTags: [
+          ['<\\?php', '\\?>'],
+          ['<no-typography>', '</no-typography>'],
+        ],
+      })
+    )
     .pipe(gulp.dest('./build/'));
 });
 
@@ -68,7 +79,6 @@ gulp.task('img:dev', function () {
     .src(['./src/img/**/*', '!./src/img/svgicons/**/*'], { encoding: false })
     .pipe(plumber(getPlumberConfig('img:dev')))
     .pipe(changed('./build/img/'))
-    .pipe(imagemin({ verbose: true }))
     .pipe(gulp.dest('./build/img/'));
 });
 
