@@ -29,12 +29,9 @@
   column-gap: adaptive-value(22, 10);
 
   &__icon {
-    max-width: adaptive-value(50, 32);
+    max-width: adaptive-value(48, 32);
+    max-height: adaptive-value(48, 32);
     user-select: none;
-
-    & img {
-      width: 100%;
-    }
   }
 
   &__title {
@@ -46,5 +43,32 @@
   &__content {
     font-size: adaptive-value(16, 14);
     font-weight: 400;
+  }
+}
+
+.icon_topics {
+  &-puzzles {
+    fill: $main-color;
+  }
+
+  &-tree {
+    fill: $main-color;
+  }
+
+  &-people {
+    stroke: $main-color;
+  }
+
+  &-masks {
+    stroke: $main-color;
+  }
+
+  &-dna {
+    stroke: $main-color;
+  }
+
+  &-magnifier {
+    fill: $main-color;
+    scale: 0.9;
   }
 }

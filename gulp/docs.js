@@ -16,19 +16,20 @@ const webpCss = require('gulp-webp-css');
 // Images
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
-
-// Other
-const server = require('gulp-server-livereload');
-const clean = require('gulp-clean');
-const fs = require('fs');
+const svgsprite = require('gulp-svg-sprite');
 
 // JS
 const webpack = require('webpack-stream');
 const babel = require('gulp-babel');
 
+// Other
+const server = require('gulp-server-livereload');
+const clean = require('gulp-clean');
+const fs = require('fs');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const changed = require('gulp-changed');
+const path = require('path');
 
 const getPlumberConfig = (title) => {
   return {
@@ -48,7 +49,7 @@ const fileIncludeConfig = {
 gulp.task('html:docs', function () {
   return gulp
     .src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
-    .pipe(plumber(getPlumberConfig('HTML')))
+    .pipe(plumber(getPlumberConfig('html:docs')))
     .pipe(changed('./docs/'))
     .pipe(fileInclude(fileIncludeConfig))
     .pipe(webpHtml())
@@ -59,7 +60,7 @@ gulp.task('html:docs', function () {
 gulp.task('sass:docs', function () {
   return gulp
     .src('./src/scss/*.scss')
-    .pipe(plumber(getPlumberConfig('SCSS')))
+    .pipe(plumber(getPlumberConfig('sass:docs')))
     .pipe(changed('./docs/css/'))
     .pipe(sassGlob())
     .pipe(groupMedia())
@@ -73,7 +74,7 @@ gulp.task('sass:docs', function () {
 gulp.task('img:docs', function () {
   return gulp
     .src('./src/img/**/*', { encoding: false })
-    .pipe(plumber(getPlumberConfig('Images')))
+    .pipe(plumber(getPlumberConfig('img:docs')))
     .pipe(changed('./docs/img/'))
     .pipe(imagemin({ verbose: true }))
     .pipe(gulp.dest('./docs/img/'))
@@ -82,16 +83,56 @@ gulp.task('img:docs', function () {
 gulp.task('webp:docs', function () {
   return gulp
     .src('./src/img/**/*.+(png|jpg|jpeg)', { encoding: false })
-    .pipe(plumber(getPlumberConfig('Webp')))
+    .pipe(plumber(getPlumberConfig('webp:docs')))
     .pipe(changed('./docs/img/'))
     .pipe(webp())
     .pipe(gulp.dest('./docs/img/'));
 });
 
+const svgSymbol = {
+  mode: {
+    symbol: {
+      sprite: '../sprite.symbol.svg',
+    },
+  },
+  shape: {
+    id: {
+      generator: function (name, file) {
+        const folderName = path.basename(path.dirname(file.relative));
+        const fileName = path.basename(file.relative, path.extname(file.relative));
+        return `${folderName}-${fileName}`;
+      },
+    },
+    transform: [
+      {
+        svgo: {
+          js2svg: { indent: 4, pretty: true },
+          plugins: [
+            {
+              name: 'removeAttrs',
+              params: {
+                attrs: '(fill|stroke)',
+              },
+            },
+          ],
+        },
+      },
+    ],
+  },
+};
+
+gulp.task('svg:docs', function () {
+  return gulp
+    .src('./src/img/svgicons/**/*.svg')
+    .pipe(plumber(plumber('svg:docs')))
+    .pipe(svgsprite(svgSymbol))
+    .pipe(gulp.dest('./docs/img/svgsprite/'));
+});
+
 gulp.task('js:docs', function () {
   return gulp
     .src('./src/js/*.js')
-    .pipe(plumber(getPlumberConfig('JS')))
+    .pipe(plumber(getPlumberConfig('js:docs')))
     .pipe(changed('./docs/js/'))
     .pipe(babel())
     .pipe(webpack(require('../webpack.config')))

@@ -186,6 +186,7 @@
 
 .media {
   display: flex;
+  align-items: center;
   column-gap: 12px;
 
   @include laptop {
@@ -194,7 +195,8 @@
   }
 
   &__link {
-    display: inline-block;
+    display: flex;
+    max-width: 32px;
     height: 22px;
     transition: all 0.2s;
     user-select: none;
@@ -215,9 +217,29 @@
 
     & img {
       height: 100%;
+    }
+  }
+}
+
+.icon {
+  &_media {
+    fill: $main-color;
+
+    @include laptop {
+      fill: $light-color;
+    }
+
+    &-vk {
+      scale: 0.9;
 
       @include laptop {
-        filter: brightness(10000%);
+        scale: 1;
+      }
+    }
+
+    &-b17 {
+      @include laptop {
+        scale: 1.2;
       }
     }
   }
