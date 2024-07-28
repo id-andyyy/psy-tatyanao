@@ -1,11 +1,4 @@
 .topics {
-  &__content {
-    padding: 0 adaptive-value(34, 0);
-  }
-
-  &__title {
-  }
-
   &__list {
     margin: 0 0 adaptive-value(50, 20) 0;
     display: flex;
@@ -13,7 +6,7 @@
     justify-content: space-between;
     row-gap: adaptive-value(45, 20);
 
-    @media (max-width: #{$tablet-width - 1 + px}) {
+    @include tablet {
       justify-content: center;
     }
   }
@@ -21,7 +14,7 @@
   &__item {
     flex: 0 1 48%;
 
-    @media (max-width: #{$tablet-width - 1 + px}) {
+    @include tablet {
       flex: 1 1 auto;
     }
   }
@@ -37,13 +30,11 @@
 
   &__icon {
     max-width: adaptive-value(50, 32);
+    user-select: none;
 
     & img {
       width: 100%;
     }
-  }
-
-  &__text {
   }
 
   &__title {

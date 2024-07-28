@@ -146,6 +146,29 @@
 
   &__item {
     text-align: center;
+
+    & a {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1.5px;
+        background-color: $main-color;
+        bottom: -2.5px;
+        left: 0;
+        transform-origin: right;
+        transition: transform 0.3s ease-in-out;
+        transform: scaleX(0);
+      }
+      @media (hover: hover) {
+        &:hover::before {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+      }
+    }
   }
 
   &__link {
@@ -154,19 +177,9 @@
     color: $main-color;
     transition: all 0.2s;
 
-    @media (max-width: #{$laptop-width - 1 + px}) {
+    @include laptop {
       color: $light-color;
       font-size: 30px;
-    }
-
-    @media (hover: hover) {
-      &:hover {
-        color: $bright-color;
-      }
-    }
-
-    &:active {
-      color: $bright-color;
     }
   }
 }
@@ -175,7 +188,7 @@
   display: flex;
   column-gap: 12px;
 
-  @media (max-width: #{$laptop-width - 1 + px}) {
+  @include laptop {
     justify-content: center;
     column-gap: 20px;
   }
@@ -184,6 +197,7 @@
     display: inline-block;
     height: 22px;
     transition: all 0.2s;
+    user-select: none;
 
     @media (hover: hover) {
       &:hover {
@@ -195,14 +209,14 @@
       transform: scale(1.2);
     }
 
-    @media (max-width: #{$laptop-width - 1 + px}) {
+    @include laptop {
       height: adaptive-value(30, 25, $laptop-width, $min-width);
     }
 
     & img {
       height: 100%;
 
-      @media (max-width: #{$laptop-width - 1 + px}) {
+      @include laptop {
         filter: brightness(10000%);
       }
     }

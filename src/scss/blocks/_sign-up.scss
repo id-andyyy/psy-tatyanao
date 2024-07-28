@@ -6,5 +6,17 @@
     font-weight: 600;
     background-color: $accent-color;
     padding: 15px adaptive-value(30, 16);
+    margin: 2px;
+    transition:
+      color 0.2s,
+      background-color 0.2s;
+    @media (hover: hover) {
+      &:hover {
+        color: $accent-color;
+        background-color: $light-color;
+        border: 2px solid $accent-color;
+        margin: 0;
+      }
+    }
   }
 }

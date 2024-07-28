@@ -16,3 +16,7 @@ body.lock {
   white-space: nowrap;
   overflow: hidden;
 }
+
+.no-select {
+  user-select: none;
+}

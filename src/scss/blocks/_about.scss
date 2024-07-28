@@ -38,6 +38,7 @@
     grid-area: photo;
     height: 100%;
     overflow: hidden;
+    user-select: none;
 
     & img {
       width: 100%;

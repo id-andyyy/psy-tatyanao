@@ -3,3 +3,15 @@
     #{$min-value + px} + (($max-value - $min-value) * ((100vw - #{$min-size + px}) / ($max-size - $min-size)))
   );
 }
+
+@mixin laptop() {
+  @media (max-width: #{$laptop-width - 1 + px}) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (max-width: #{$tablet-width - 1 + px}) {
+    @content;
+  }
+}

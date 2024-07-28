@@ -1,0 +1,32 @@
+.education {
+  &__content {
+  }
+
+  &__title {
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: adaptive-value(35, 25);
+  }
+
+  &__item {
+    font-size: adaptive-value(16, 14);
+    flex: 0 1 48%;
+
+    @include tablet {
+      flex: 1 1 auto;
+    }
+
+    &_more {
+      text-decoration: underline;
+      font-weight: 500;
+
+      @include tablet {
+        text-align: center;
+      }
+    }
+  }
+}
