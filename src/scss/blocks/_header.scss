@@ -36,6 +36,7 @@
 
   &__icon {
     display: none;
+    cursor: pointer;
 
     @include laptop {
       $burger-width: 40px;

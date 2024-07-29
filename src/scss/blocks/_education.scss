@@ -21,8 +21,10 @@
     }
 
     &_more {
-      text-decoration: underline;
-      font-weight: 500;
+      & button {
+        text-decoration: underline;
+        font-weight: 500;
+      }
 
       @include tablet {
         text-align: center;
