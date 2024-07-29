@@ -11,7 +11,6 @@ const sourceMaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 
 // Images
-const imagemin = require('gulp-imagemin');
 const svgsprite = require('gulp-svg-sprite');
 
 // JS
@@ -44,7 +43,7 @@ const fileIncludeConfig = {
 
 gulp.task('html:dev', function () {
   return gulp
-    .src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
+    .src(['./src/html/**/*.html', '!./src/html/blocks/*.html', '!./src/html/templates/*.html'])
     .pipe(plumber(getPlumberConfig('html:dev')))
     .pipe(changed('./build/', { hasChanged: changed.compareContents }))
     .pipe(fileInclude(fileIncludeConfig))
@@ -147,6 +146,8 @@ gulp.task('server:dev', function () {
     .pipe(server({
       livereload: true,
       open: true,
+      host: '0.0.0.0',
+      port: 8000,
     }));
 });
 

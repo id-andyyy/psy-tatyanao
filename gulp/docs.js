@@ -48,7 +48,7 @@ const fileIncludeConfig = {
 
 gulp.task('html:docs', function () {
   return gulp
-    .src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
+    .src(['./src/html/**/*.html', '!./src/html/blocks/*.html', '!./src/html/templates/*.html'])
     .pipe(plumber(getPlumberConfig('html:docs')))
     .pipe(changed('./docs/'))
     .pipe(fileInclude(fileIncludeConfig))

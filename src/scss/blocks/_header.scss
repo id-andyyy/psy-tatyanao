@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: #{$laptop-width - 1 + px}) {
+    @include laptop {
       margin: 0 10px;
     }
   }
@@ -29,7 +29,7 @@
 .menu {
   flex-grow: 1;
 
-  @media (max-width: #{$laptop-width - 1 + px}) {
+  @include laptop {
     display: flex;
     justify-content: flex-end;
   }
@@ -37,7 +37,7 @@
   &__icon {
     display: none;
 
-    @media (max-width: #{$laptop-width - 1 + px}) {
+    @include laptop {
       $burger-width: 40px;
 
       $burger-icon-line-height: 3px;
@@ -105,7 +105,7 @@
   }
 
   &__body {
-    @media (max-width: #{$laptop-width - 1 + px}) {
+    @include laptop {
       position: absolute;
       bottom: 100%;
       left: 0;
@@ -127,11 +127,11 @@
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: #{$laptop-width - 1 + px}) {
+    @include laptop {
       flex-direction: column;
       margin: auto;
       row-gap: 60px;
-      padding: 30px 15px;
+      padding: 50px 15px;
     }
   }
 }
@@ -140,7 +140,7 @@
   display: flex;
   column-gap: 15px;
 
-  @media (max-width: #{$laptop-width - 1 + px}) {
+  @include laptop {
     flex-direction: column;
     row-gap: 20px;
   }

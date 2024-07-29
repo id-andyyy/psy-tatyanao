@@ -11,6 +11,15 @@
           dolor.</li>
         <li class="education__item education__item_more"><a href="#">Подробнее</a></li>
       </ul>
+      <div class="education__slider edu-slider swiper">
+        <div class="edu-slider__wrapper swiper-wrapper">
+          @@loop('./../templates/edu-slide.html', './../data/edu-slider.json')
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
     </div>
   </div>
 </section>
