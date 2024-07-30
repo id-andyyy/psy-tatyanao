@@ -7,6 +7,7 @@ const swiper = new Swiper('.edu-slider', {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+    dynamicBullets: true,
   },
 
   simulateTouch: false,
@@ -14,13 +15,12 @@ const swiper = new Swiper('.edu-slider', {
   watchOverflow: true,
   loop: true,
 
-  speed: 500,
+  speed: 300,
 
   effect: 'fade',
   fadeEffect: {
     crossFade: true,
   },
-
 });
 
 export default swiper;
