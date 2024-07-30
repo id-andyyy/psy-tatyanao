@@ -4,7 +4,7 @@ function modal() {
   const modalCloseNode = document.querySelectorAll('.modal__close');
 
   let unlock = true;
-  const timeout = 800;
+  const timeout = 300;
 
   if (modalButtonsNode) {
     modalButtonsNode.forEach(currentModalButtonNode => {

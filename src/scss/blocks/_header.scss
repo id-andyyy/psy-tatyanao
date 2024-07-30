@@ -9,10 +9,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include laptop {
-      margin: 0 10px;
-    }
   }
 
   &__logo {
