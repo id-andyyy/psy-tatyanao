@@ -9,8 +9,74 @@
           dolor.</li>
         <li class="education__item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
           dolor.</li>
-        <li class="education__item education__item_more"><button>Подробнее</button></li>
+        <li class="education__item education__item_more"><button class="education__more modal-button"
+            data-modal="education-modal">Подробнее</button></li>
       </ul>
+      <div id="education-modal" class="education__modal modal">
+        <div class="modal__body">
+          <div class="modal__content">
+            <button class="modal__close">
+              <svg class="icon icon_buttons-close-btn">
+                <use href="./img/svgsprite/sprite.symbol.svg#buttons-close-btn"></use>
+              </svg>
+            </button>
+            <div class="modal__title section-title">Документы об образовании</div>
+            <ul class="modal__text">
+              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, consequatur?</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit aut vel incidunt quisquam
+                facilis fugiat culpa, quaerat temporibus ad, ipsum enim similique illum, dolores fugit.</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui voluptatem in repellat autem, illum
+                tempora incidunt ipsa laudantium esse eius.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nam fugit? Perspiciatis earum
+                maiores unde!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, nesciunt repellat in unde quibusdam
+                optio inventore facere modi sit qui dolorum, a architecto.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe harum ipsum sint voluptates deserunt
+                quae dolor veritatis! Ratione, odio!</li>
+              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est iste autem similique consequatur,
+                aspernatur repellat eligendi assumenda?</li>
+              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At voluptatum ex assumenda nisi, neque
+                soluta quos recusandae, alias animi, maiores ipsa facilis consectetur.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi adipisci enim harum deserunt sed!
+                Obcaecati, deleniti dolorum.</li>
+              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, consequatur?</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit aut vel incidunt quisquam
+                facilis fugiat culpa, quaerat temporibus ad, ipsum enim similique illum, dolores fugit.</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui voluptatem in repellat autem, illum
+                tempora incidunt ipsa laudantium esse eius.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nam fugit? Perspiciatis earum
+                maiores unde!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, nesciunt repellat in unde quibusdam
+                optio inventore facere modi sit qui dolorum, a architecto.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe harum ipsum sint voluptates deserunt
+                quae dolor veritatis! Ratione, odio!</li>
+              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est iste autem similique consequatur,
+                aspernatur repellat eligendi assumenda?</li>
+              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At voluptatum ex assumenda nisi, neque
+                soluta quos recusandae, alias animi, maiores ipsa facilis consectetur.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi adipisci enim harum deserunt sed!
+                Obcaecati, deleniti dolorum.</li>
+              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, consequatur?</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit aut vel incidunt quisquam
+                facilis fugiat culpa, quaerat temporibus ad, ipsum enim similique illum, dolores fugit.</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui voluptatem in repellat autem, illum
+                tempora incidunt ipsa laudantium esse eius.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, nam fugit? Perspiciatis earum
+                maiores unde!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, nesciunt repellat in unde quibusdam
+                optio inventore facere modi sit qui dolorum, a architecto.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe harum ipsum sint voluptates deserunt
+                quae dolor veritatis! Ratione, odio!</li>
+              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est iste autem similique consequatur,
+                aspernatur repellat eligendi assumenda?</li>
+              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At voluptatum ex assumenda nisi, neque
+                soluta quos recusandae, alias animi, maiores ipsa facilis consectetur.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi adipisci enim harum deserunt sed!
+                Obcaecati, deleniti dolorum.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="education__slider edu-slider swiper">
         <div class="edu-slider__wrapper swiper-wrapper">
           @@loop('./../templates/edu-slider.html', './../data/edu-slider.json')

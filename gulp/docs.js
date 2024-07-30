@@ -168,6 +168,8 @@ gulp.task('server:docs', function () {
     .src('./docs')
     .pipe(server({
       livereload: true,
-      open: true,
+      open: false,
+      host: '0.0.0.0',
+      port: 8000,
     }));
 });
