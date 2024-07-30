@@ -15,7 +15,8 @@ const groupMedia = require('gulp-group-css-media-queries');
 
 // Images
 const imagemin = require('gulp-imagemin');
-const webp = require('gulp-webp');
+const imageminWebp = require('imagemin-webp');
+const extReplace = require('gulp-ext-replace');
 const svgsprite = require('gulp-svg-sprite');
 
 // JS
@@ -82,7 +83,7 @@ gulp.task('sass:docs', function () {
 
 gulp.task('img:docs', function () {
   return gulp
-    .src('./src/img/**/*', { encoding: false })
+    .src(['./src/img/**/*', '!./src/img/svgicons/**/*'], { encoding: false })
     .pipe(plumber(getPlumberConfig('img:docs')))
     .pipe(changed('./docs/img/'))
     .pipe(imagemin(
@@ -100,7 +101,14 @@ gulp.task('webp:docs', function () {
     .src('./src/img/**/*.+(png|jpg|jpeg)', { encoding: false })
     .pipe(plumber(getPlumberConfig('webp:docs')))
     .pipe(changed('./docs/img/'))
-    .pipe(webp())
+    .pipe(
+      imagemin([
+        imageminWebp({
+          quality: 85,
+        }),
+      ])
+    )
+    .pipe(extReplace('.webp'))
     .pipe(gulp.dest('./docs/img/'));
 });
 
