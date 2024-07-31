@@ -10,7 +10,7 @@ function burgerMenu() {
       bodyNode.classList.toggle('lock');
     });
 
-    menuBodyNode.querySelectorAll('.list__link').forEach(link => {
+    menuBodyNode.querySelectorAll('.menu-list__link').forEach(link => {
       link.addEventListener('click', () => {
         menuBodyNode.classList.remove('burger-active');
         menuIconNode.classList.remove('burger-active');
