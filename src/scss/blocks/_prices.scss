@@ -1,0 +1,96 @@
+.prices {
+  &__content {
+  }
+
+  &__title {
+  }
+
+  &__personal {
+  }
+
+  &__online {
+    &.price-option {
+      @include tablet {
+        flex-wrap: wrap-reverse;
+      }
+    }
+  }
+
+  &__sign-up {
+    text-align: center;
+  }
+}
+
+.price-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px 17px;
+  margin: 0 0 adaptive-value(50, 20) 0;
+
+  @include tablet {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__photo {
+    text-align: center;
+    width: 100%;
+    max-width: 374px;
+    height: 281px;
+
+    @include tablet {
+      max-width: 80%;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__description {
+    flex: 0 0 50%;
+    padding: 0 20px;
+
+    @include tablet {
+      flex: unset;
+      padding: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: adaptive-value(18, 15);
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 adaptive-value(15, 7) 0;
+  }
+
+  &__details {
+    font-size: adaptive-value(16, 14);
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 adaptive-value(13, 4) 0;
+  }
+
+  &__cost {
+    font-size: adaptive-value(16, 14);
+    font-weight: 400;
+    text-align: center;
+  }
+}
