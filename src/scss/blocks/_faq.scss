@@ -1,0 +1,76 @@
+.faq {
+  &__content {
+  }
+
+  &__title {
+  }
+
+  &__accordion {
+  }
+}
+.accordion {
+  &__item {
+    border-top: 1px solid $main-color;
+    border-bottom: 1px solid $main-color;
+    padding: 0 adaptive-value(33, 10);
+    margin-bottom: -1px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__header {
+    text-align: start;
+    max-width: 87%;
+  }
+
+  &__button {
+    padding: adaptive-value(15, 10) 0;
+    font-size: adaptive-value(18, 15);
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: $main-color;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: adaptive-value(30, 25);
+      height: adaptive-value(2, 1.5);
+      transform: translate(0, -50%);
+      transition: all 0.3s ease;
+
+      .accordion__item.accordion-active & {
+        transform: translate(0, -50%) rotate(135deg);
+      }
+    }
+
+    &::before {
+      transform: translate(0, -50%) rotate(90deg);
+
+      .accordion__item.accordion-active & {
+        transform: translate(0, -50%) rotate(225deg);
+      }
+    }
+  }
+
+  &__collapse {
+    font-size: adaptive-value(16, 14);
+    transition: all 0.3s ease;
+
+    .accordion__item.accordion-active & {
+      padding: adaptive-value(15, 10) 0;
+    }
+  }
+
+  &__body {
+    height: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+}

@@ -1,5 +1,5 @@
 function smoothScroll() {
-  const headerHeight = document.querySelector(".header").offsetHeight + 19 * 2;
+  const headerHeight = document.querySelector(".header").offsetHeight;
 
   document.addEventListener('click', e => {
     if (e.target.hash) {
