@@ -1,6 +1,5 @@
 .contacts {
-  &__content {
-  }
+  margin: 0 0 adaptive-value(100, 75) 0;
 
   &__row {
     display: flex;
@@ -61,11 +60,17 @@
     display: flex;
     align-items: center;
     column-gap: 30px;
+
+    @media (hover: hover) {
+      &:hover .contacts-media__image {
+        transform: scale(1.2);
+      }
+    }
   }
 
   &__image {
-    // flex: 0 0 10%;
     height: adaptive-value(26, 24);
+    transition: all 0.2s;
 
     svg {
       max-width: 50px;
@@ -93,10 +98,6 @@
   &__item {
     margin: 0 0 20px 0;
 
-    &:last-child {
-      margin: 0;
-    }
-
     @include tablet {
       text-align: center;
     }
@@ -122,6 +123,14 @@
 
     button {
       padding: 15px 47px;
+    }
+  }
+
+  &__result {
+    font-size: adaptive-value(16, 14);
+
+    @include tablet {
+      text-align: center;
     }
   }
 }
