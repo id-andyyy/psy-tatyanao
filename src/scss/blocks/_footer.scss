@@ -1,0 +1,28 @@
+.footer {
+  margin: 0 0 40px 0;
+
+  &__content {
+    text-align: center;
+    font-size: adaptive-value(15, 12);
+  }
+
+  &__copyright {
+    font-weight: 500;
+    margin: 0 0 adaptive-value(24, 12);
+  }
+}
+
+.footer-creators {
+  color: $form-color;
+  display: flex;
+  justify-content: center;
+  column-gap: adaptive-value(37, 19);
+
+  &__item {
+    position: relative;
+  }
+
+  &__name {
+    text-decoration: underline;
+  }
+}
