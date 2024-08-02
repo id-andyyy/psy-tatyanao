@@ -1,0 +1,127 @@
+.contacts {
+  &__content {
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px 50px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__group {
+    flex: 0 1 40%;
+
+    @include tablet {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.contacts-group {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    align-items: center;
+  }
+
+  &__title {
+    font-size: adaptive-value(16, 14);
+    font-weight: 500;
+    margin: 0 0 adaptive-value(26, 15) 0;
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  &__content {
+  }
+
+  &__form {
+  }
+}
+
+.contacts-media {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+
+  @include tablet {
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: block;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  &__image {
+    // flex: 0 0 10%;
+    height: adaptive-value(26, 24);
+
+    svg {
+      max-width: 50px;
+    }
+
+    .icon_media {
+      @include laptop {
+        fill: $main-color;
+      }
+
+      &-b17,
+      &-vk {
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  &__username {
+    font-size: adaptive-value(16, 14);
+  }
+}
+
+.contacts-form {
+  width: 100%;
+  &__item {
+    margin: 0 0 20px 0;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include tablet {
+      text-align: center;
+    }
+
+    input {
+      border-bottom: 1px solid $accent-color;
+      width: 90%;
+      max-width: 400px;
+      color: $main-color;
+
+      &::placeholder {
+        color: $form-color;
+      }
+    }
+  }
+
+  &__sign-up {
+    margin: 28px 0 0 0;
+
+    @include tablet {
+      text-align: center;
+    }
+
+    button {
+      padding: 15px 47px;
+    }
+  }
+}

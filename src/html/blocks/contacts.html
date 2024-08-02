@@ -1,0 +1,33 @@
+<section class="contacts" id="contacts">
+  <div class="container">
+    <div class="contacts__content">
+      <h2 class="contacts__title section-title">Контакты</h2>
+      <div class="contacts__row">
+        <div class="contacts__group contacts-group">
+          <div class="contacts-group__title">Lorem ipsum dolor sit amet, consectetue</div>
+          <ul class="contacts-group__content contacts-media">
+            @@loop('./../templates/contacts-media.html', './../data/media.json')
+          </ul>
+        </div>
+        <div class="contacts__group contacts-group">
+          <div class="contacts-group__title">Или оставьте заявку, и я свяжусь с Вами в ближайшее время</div>
+          <form action="https://api.web3forms.com/submit" method="POST" class="contacts-group__form contacts-form">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <div class="contacts-form__item">
+              <input type="text" name="name" placeholder="Фамилия Имя Отчество" required>
+            </div>
+            <div class="contacts-form__item">
+              <input type="tel" name="phone" placeholder="Телефон" required>
+            </div>
+            <div class="contacts-form__item">
+              <input name="topic" placeholder="С чем Вы хотели бы обратиться" required></input>
+            </div>
+            <div class="contacts-form__sign-up sign-up">
+              <button type="submit" class="sign-up__btn">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

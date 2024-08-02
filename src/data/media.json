@@ -1,0 +1,32 @@
+[
+  {
+    "username": "@trenirovky_mozga",
+    "link": "https://t.me/trenirovky_mozga",
+    "filename": "telegram"
+  },
+  {
+    "username": "+7 (912) 861-86-58",
+    "link": "https://wa.me/79128618658",
+    "filename": "whatsapp"
+  },
+  {
+    "username": "@trenirovky_mozga",
+    "link": "https://vk.com/trenirovky_mozga",
+    "filename": "vk"
+  },
+  {
+    "username": "@tatyanao",
+    "link": "https://www.b17.ru/tatyanao",
+    "filename": "b17"
+  },
+  {
+    "username": "matan2004@bk.ru",
+    "link": "mailto:matan2004@bk.ru",
+    "filename": "email"
+  },
+  {
+    "username": "+7 (912) 861-86-58",
+    "link": "tel:+79128618658",
+    "filename": "phone"
+  }
+]
