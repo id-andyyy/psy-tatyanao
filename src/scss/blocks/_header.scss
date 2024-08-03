@@ -15,6 +15,7 @@
     display: inline-block;
     width: adaptive-value(51, 42);
     margin: 0 26px 0 0;
+    user-select: none;
 
     & img {
       width: 100%;
