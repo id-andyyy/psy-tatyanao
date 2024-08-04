@@ -1,5 +1,23 @@
 .about {
-  margin: 40px 0 0 0;
+  padding: adaptive-value(129, 114) 0 $section-padding 0;
+  overflow: hidden;
+  position: relative;
+
+  #about1 {
+    width: 1115px;
+    height: 1100px;
+    top: adaptive-value(200, 300);
+    right: adaptive-value(-150, -150);
+    transform: translate(50%, -50%);
+  }
+
+  #about2 {
+    width: 945px;
+    height: 869px;
+    top: adaptive-value(400, 750);
+    left: adaptive-value(-40, -30);
+    transform: translate(-50%, -50%);
+  }
 
   &__content {
     display: grid;

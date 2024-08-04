@@ -1,5 +1,15 @@
 .footer {
-  margin: 0 0 40px 0;
+  padding: adaptive-value(100, 75) 0 40px 0;
+  position: relative;
+  overflow: hidden;
+
+  #footer1 {
+    width: 2021px;
+    height: 1199px;
+    bottom: adaptive-value(-330, -370);
+    left: 50%;
+    transform: translate(-40%, 50%);
+  }
 
   &__content {
     text-align: center;

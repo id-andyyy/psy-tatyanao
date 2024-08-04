@@ -1,4 +1,16 @@
 .topics {
+  padding: $section-padding 0 $section-padding 0;
+  overflow: hidden;
+  position: relative;
+
+  #topics1 {
+    width: 1091px;
+    height: 843px;
+    bottom: adaptive-value(300, 300);
+    right: adaptive-value(-50, -150);
+    transform: translate(50%, 50%);
+  }
+
   &__list {
     margin: 0 0 adaptive-value(50, 20) 0;
     display: flex;

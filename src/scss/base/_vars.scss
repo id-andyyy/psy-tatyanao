@@ -1,14 +1,14 @@
-/* Screen size */
+// Screen size
 $container-width: 1180;
 
-/* Breakpoints */
+// Breakpoints
 $max-width: 1280;
 $laptop-width: 1072;
 $tablet-width: 768;
 $mobile-width: 425;
 $min-width: 360;
 
-/* Colors */
+// Colors
 $main-color: #731c00;
 $light-color: #ffffff;
 $accent-color: #dd7f4a;
@@ -17,3 +17,6 @@ $form-color: #dc9f8c;
 $background-color: #fffbf4;
 $geometry-success: #ffa800;
 $geometry-danger: #dd7f4a;
+
+// Common values
+$section-padding: adaptive-value(100, 75);

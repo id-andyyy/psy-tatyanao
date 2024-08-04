@@ -1,11 +1,14 @@
 .faq {
-  &__content {
-  }
+  padding: $section-padding 0 $section-padding 0;
+  overflow: hidden;
+  position: relative;
 
-  &__title {
-  }
-
-  &__accordion {
+  #faq1 {
+    width: 1280px;
+    height: 1062px;
+    bottom: adaptive-value(350, 350);
+    left: adaptive-value(-50, -200);
+    transform: translate(-50%, 50%);
   }
 }
 .accordion {

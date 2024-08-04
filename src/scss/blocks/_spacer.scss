@@ -1,7 +1,6 @@
 .spacer {
   display: flex;
   justify-content: center;
-  margin: adaptive-value(100, 75) 0;
   &__line {
     background-color: $main-color;
     width: adaptive-value(400, 190);

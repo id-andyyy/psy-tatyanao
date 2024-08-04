@@ -1,8 +1,14 @@
 .education {
-  &__content {
-  }
+  padding: $section-padding 0 $section-padding 0;
+  overflow: hidden;
+  position: relative;
 
-  &__title {
+  #education1 {
+    width: 945px;
+    height: 869px;
+    top: adaptive-value(400, 300);
+    left: adaptive-value(0, -50);
+    transform: translate(-50%, -50%);
   }
 
   &__list {
