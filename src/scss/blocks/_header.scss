@@ -144,29 +144,6 @@
 
   &__item {
     text-align: center;
-
-    & a {
-      position: relative;
-
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 1.5px;
-        background-color: $main-color;
-        bottom: -2.5px;
-        left: 0;
-        transform-origin: right;
-        transition: transform 0.3s ease-in-out;
-        transform: scaleX(0);
-      }
-      @media (hover: hover) {
-        &:hover::before {
-          transform-origin: left;
-          transform: scaleX(1);
-        }
-      }
-    }
   }
 
   &__link {
@@ -174,10 +151,30 @@
     font-weight: 500;
     color: $main-color;
     transition: all 0.2s;
+    position: relative;
 
     @include laptop {
       color: $light-color;
       font-size: 30px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1.3px;
+      background-color: $main-color;
+      bottom: -2.5px;
+      left: 0;
+      transform-origin: right;
+      transition: transform 0.3s ease-in-out;
+      transform: scaleX(0);
+    }
+    @media (hover: hover) {
+      &:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
     }
   }
 }
