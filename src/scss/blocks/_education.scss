@@ -48,9 +48,6 @@
     margin: 0 -15px 0;
   }
 
-  &__slide {
-  }
-
   &__diplom {
     display: flex;
     justify-content: center;
@@ -132,8 +129,8 @@
 
   &__content {
     background-color: $background-color;
-    max-width: 800px;
-    padding: adaptive-value(38, 28) adaptive-value(35, 9);
+    max-width: adaptive-value(700, 400);
+    padding: adaptive-value(38, 28) adaptive-value(35, 25);
     position: relative;
     display: flex;
     flex-direction: column;
