@@ -4,11 +4,10 @@
   overflow: hidden;
 
   #footer1 {
-    width: 2021px;
-    height: 1199px;
-    bottom: adaptive-value(-330, -370);
+    width: adaptive-value(2021, 1500);
+    bottom: adaptive-value(-225, -150);
     left: 50%;
-    transform: translate(-40%, 50%);
+    transform: translate(-50%, 50%);
   }
 
   &__content {

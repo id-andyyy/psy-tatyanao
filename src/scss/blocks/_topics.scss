@@ -4,11 +4,14 @@
   position: relative;
 
   #topics1 {
-    width: 1091px;
-    height: 843px;
-    bottom: adaptive-value(300, 300);
-    right: adaptive-value(-50, -150);
+    width: adaptive-value(1091, 1000);
+    bottom: adaptive-value(320, 300);
+    right: adaptive-value(-50, -100);
     transform: translate(50%, 50%);
+
+    @include desktop {
+      right: adaptive-value(-275, -150, $four-k-width, $desktop-width);
+    }
   }
 
   &__list {

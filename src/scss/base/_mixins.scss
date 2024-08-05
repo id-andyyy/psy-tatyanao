@@ -4,6 +4,12 @@
   );
 }
 
+@mixin desktop() {
+  @media (min-width: #{$desktop-width - 1 + px}) {
+    @content;
+  }
+}
+
 @mixin laptop() {
   @media (max-width: #{$laptop-width - 1 + px}) {
     @content;

@@ -4,19 +4,29 @@
   position: relative;
 
   #about1 {
-    width: 1115px;
-    height: 1100px;
-    top: adaptive-value(200, 300);
-    right: adaptive-value(-150, -150);
+    width: adaptive-value(1115, 800);
+    top: adaptive-value(200, 200);
+    right: adaptive-value(-160, -150);
     transform: translate(50%, -50%);
+
+    @include desktop {
+      right: adaptive-value(-350, -200, $four-k-width, $desktop-width);
+    }
   }
 
   #about2 {
-    width: 945px;
-    height: 869px;
-    top: adaptive-value(400, 750);
-    left: adaptive-value(-40, -30);
+    width: adaptive-value(945, 700);
+    top: adaptive-value(300, 300, $max-width, $tablet-width);
+    left: adaptive-value(0, -5);
     transform: translate(-50%, -50%);
+
+    @include tablet {
+      top: adaptive-value(675, 650, $tablet-width - 1, $min-width);
+    }
+
+    @include desktop {
+      left: adaptive-value(0, 75, $four-k-width, $desktop-width);
+    }
   }
 
   &__content {
@@ -64,10 +74,26 @@
     grid-area: photo;
     margin: 0 0 15px 0;
 
+    @include tablet {
+      max-height: 400px;
+    }
+
+    @include mobile {
+      max-height: 350px;
+    }
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      @include tablet {
+        object-position: 0 adaptive-value(-100, -50, 767, 424);
+      }
+
+      @media (max-width: 330px) {
+        object-position: center;
+      }
     }
   }
 

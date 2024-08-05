@@ -4,11 +4,14 @@
   position: relative;
 
   #education1 {
-    width: 945px;
-    height: 869px;
-    top: adaptive-value(400, 300);
+    width: adaptive-value(1000, 900);
+    top: adaptive-value(400, 350);
     left: adaptive-value(0, -50);
     transform: translate(-50%, -50%);
+
+    @include desktop {
+      left: adaptive-value(-150, -50, $four-k-width, $desktop-width);
+    }
   }
 
   &__list {

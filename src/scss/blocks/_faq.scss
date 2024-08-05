@@ -4,11 +4,14 @@
   position: relative;
 
   #faq1 {
-    width: 1280px;
-    height: 1062px;
+    width: adaptive-value(1000, 950);
     bottom: adaptive-value(350, 350);
-    left: adaptive-value(-50, -200);
+    left: adaptive-value(-50, -100);
     transform: translate(-50%, 50%);
+
+    @include desktop {
+      left: adaptive-value(-200, -100, $four-k-width, $desktop-width);
+    }
   }
 }
 .accordion {
