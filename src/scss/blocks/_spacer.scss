@@ -3,7 +3,7 @@
   justify-content: center;
   &__line {
     background-color: $main-color;
-    width: adaptive-value(400, 190);
+    width: adaptive-value(250, 190);
     height: 1px;
   }
 }

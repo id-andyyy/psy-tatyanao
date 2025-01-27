@@ -73,6 +73,7 @@
   &__photo {
     grid-area: photo;
     margin: 0 0 15px 0;
+    user-select: none;
 
     @include tablet {
       max-height: 400px;

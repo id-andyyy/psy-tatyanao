@@ -88,6 +88,7 @@
           &::before,
           &::after {
             top: 0;
+            background-color: $light-color;
           }
 
           &::before {
@@ -109,8 +110,7 @@
       left: 0;
       height: 100vh;
       width: 100%;
-      backdrop-filter: blur(20px);
-      background: rgba(255, 251, 244, 0.7);
+      background-color: $main-color;
       display: flex;
       transition: all 0.2s;
       overflow: auto;
@@ -157,6 +157,7 @@
 
     @include laptop {
       font-size: 30px;
+      color: $light-color;
     }
 
     &::before {
@@ -171,7 +172,7 @@
       transition: transform 0.3s ease-in-out;
       transform: scaleX(0);
     }
-    @media (hover: hover) {
+    @media not (any-pointer: coarse) {
       &:hover::before {
         transform-origin: left;
         transform: scaleX(1);
@@ -197,14 +198,10 @@
     transition: all 0.2s;
     user-select: none;
 
-    @media (hover: hover) {
+    @media not (any-pointer: coarse) {
       &:hover {
         transform: scale(1.2);
       }
-    }
-
-    &:active {
-      transform: scale(1.2);
     }
 
     @include laptop {
@@ -220,6 +217,10 @@
 .icon {
   &_media {
     fill: $main-color;
+
+    @include laptop {
+      fill: $light-color;
+    }
 
     &-vk {
       scale: 0.9;
