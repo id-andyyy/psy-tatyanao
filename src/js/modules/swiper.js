@@ -1,7 +1,7 @@
-const swiper = new Swiper('.edu-slider', {
+const swiper = new Swiper(".edu-slider", {
   navigation: {
-    prevEl: '.swiper-button-prev',
-    nextEl: '.swiper-button-next',
+    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next",
   },
 
   pagination: {
@@ -17,7 +17,7 @@ const swiper = new Swiper('.edu-slider', {
 
   speed: 300,
 
-  effect: 'fade',
+  effect: "fade",
   fadeEffect: {
     crossFade: true,
   },
