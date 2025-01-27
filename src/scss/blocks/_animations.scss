@@ -1,0 +1,38 @@
+.animation {
+  opacity: 0;
+  transition:
+    transform 1.5s ease,
+    opacity 1.5s ease;
+}
+
+$offset: adaptive-value(40, 30);
+$offset-block: adaptive-value(50, 30);
+
+.animation-right {
+  transform: translate(calc(-1 * $offset), 0);
+}
+
+.animation-left {
+  transform: translate($offset, 0);
+
+  @include laptop {
+    transform: translate(0, $offset);
+  }
+}
+
+.animation-up {
+  transform: translate(0, $offset);
+}
+
+.animation-down {
+  transform: translate(0, calc(-1 * $offset));
+}
+
+.animation-block {
+  transform: translate(0, $offset-block);
+}
+
+._is-animated {
+  opacity: 1;
+  transform: none;
+}

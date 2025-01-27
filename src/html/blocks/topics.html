@@ -3,78 +3,7 @@
     <div class="topics__content">
       <h2 class="topics__title section-title">С чем работаю</h2>
       <ul class="topics__list">
-        <li class="topics__item topic">
-          <div class="topic__icon">
-            <svg class="icon icon_topics-puzzles">
-              <use href="./img/svgsprite/sprite.symbol.svg#topics-puzzles"></use>
-            </svg>
-          </div>
-          <div class="topic__text">
-            <div class="topic__title">Lorem ipsum dolor sit amet, consectetuer</div>
-            <div class="topic__content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-              eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</div>
-          </div>
-        </li>
-        <li class="topics__item topic">
-          <div class="topic__icon">
-            <svg class="icon icon_topics-tree">
-              <use href="./img/svgsprite/sprite.symbol.svg#topics-tree"></use>
-            </svg>
-          </div>
-          <div class="topic__text">
-            <div class="topic__title">Lorem ipsum dolor sit amet, consectetuer</div>
-            <div class="topic__content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-              eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</div>
-          </div>
-        </li>
-        <li class="topics__item topic">
-          <div class="topic__icon">
-            <svg class="icon icon_topics-people">
-              <use href="./img/svgsprite/sprite.symbol.svg#topics-people"></use>
-            </svg>
-          </div>
-          <div class="topic__text">
-            <div class="topic__title">Lorem ipsum dolor sit amet, consectetuer</div>
-            <div class="topic__content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-              eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</div>
-          </div>
-        </li>
-        <li class="topics__item topic">
-          <div class="topic__icon">
-            <svg class="icon icon_topics-masks">
-              <use href="./img/svgsprite/sprite.symbol.svg#topics-masks"></use>
-            </svg>
-          </div>
-          <div class="topic__text">
-            <div class="topic__title">Lorem ipsum dolor sit amet, consectetuer</div>
-            <div class="topic__content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-              eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</div>
-          </div>
-        </li>
-        <li class="topics__item topic">
-          <div class="topic__icon">
-            <svg class="icon icon_topics-dna">
-              <use href="./img/svgsprite/sprite.symbol.svg#topics-dna"></use>
-            </svg>
-          </div>
-          <div class="topic__text">
-            <div class="topic__title">Lorem ipsum dolor sit amet, consectetuer</div>
-            <div class="topic__content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-              eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</div>
-          </div>
-        </li>
-        <li class="topics__item topic">
-          <div class="topic__icon">
-            <svg class="icon icon_topics-magnifier">
-              <use href="./img/svgsprite/sprite.symbol.svg#topics-magnifier"></use>
-            </svg>
-          </div>
-          <div class="topic__text">
-            <div class="topic__title">Lorem ipsum dolor sit amet, consectetuer</div>
-            <div class="topic__content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-              eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis</div>
-          </div>
-        </li>
+        @@loop('./../templates/topics-item.html', './../data/topics-item.json')
       </ul>
       <div class="topics__sign-up sign-up">
         <a href="#contacts" class="sign-up__btn">Записаться на консультацию</a>

@@ -162,4 +162,5 @@ gulp.task("watch:dev", function () {
   gulp.watch("./src/img/**/*", gulp.series("img:dev"));
   gulp.watch("./src/img/svgicons/*", gulp.series("svg:dev"));
   gulp.watch("./src/js/**/*", gulp.series("js:dev"));
+  gulp.watch("./src/data/**/*", gulp.series("html:dev"));
 });
