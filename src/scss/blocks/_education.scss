@@ -27,12 +27,19 @@
 
     @include tablet {
       flex: 1 1 auto;
+
+      &_1 {
+        order: -2;
+      }
+
+      &_2 {
+        order: -1;
+      }
     }
 
     &_more {
-      @include tablet {
-        text-align: center;
-      }
+      flex: 1 1 auto;
+      text-align: center;
     }
   }
 

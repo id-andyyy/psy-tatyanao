@@ -59,32 +59,34 @@
   &__content {
     font-size: adaptive-value(16, 14);
     font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
 }
 
 .icon_topics {
+  &-meditation {
+    fill: $main-color;
+  }
+
+  &-sun {
+    stroke: $main-color;
+  }
+
+  &-love {
+    fill: $main-color;
+  }
+
+  &-care {
+    fill: $main-color;
+  }
+
   &-puzzles {
     fill: $main-color;
   }
 
-  &-tree {
-    fill: $main-color;
-  }
-
-  &-people {
-    stroke: $main-color;
-  }
-
   &-masks {
     stroke: $main-color;
-  }
-
-  &-dna {
-    stroke: $main-color;
-  }
-
-  &-magnifier {
-    fill: $main-color;
-    scale: 0.9;
   }
 }

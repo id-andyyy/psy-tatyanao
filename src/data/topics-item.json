@@ -1,32 +1,32 @@
 [
   {
-    "title": "Lorem ipsum dolor sit amet, consectetuer",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis",
+    "title": "Тревожные состояния и расстройства",
+    "description": "<div>Разберемся – что стоит за вашими страхами.</div><div>Найдем способы совладания с ними.</div><div>Вы получите действенные инструменты, которые облегчат ваши переживания.</div",
+    "icon": "topics-meditation"
+  },
+  {
+    "title": "Эмоциональное выгорание, стресс, депрессивные проявления",
+    "description": "<div>Всё это – результат неадаптивных стратегий.</div><div>Будем менять мыслительные паттерны. Развивать навыки управления стрессом.</div><div>Повышать способность радоваться жизни.</div>",
+    "icon": "topics-sun"
+  },
+  {
+    "title": "Внутриличностные конфликты, вопросы самооценки",
+    "description": "<div>Будем разбираться с внутренними конфликтами между «должен» и «не могу», «хочу» и «надо».</div><div>Укрепим вашу веру в собственные силы.<br>Прокачаем уверенность в себе.</div>",
     "icon": "topics-puzzles"
   },
   {
-    "title": "Lorem ipsum dolor sit amet, consectetuer",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis",
-    "icon": "topics-tree"
-  },
-  {
-    "title": "Lorem ipsum dolor sit amet, consectetuer",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis",
-    "icon": "topics-dna"
-  },
-  {
-    "title": "Lorem ipsum dolor sit amet, consectetuer",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis",
-    "icon": "topics-magnifier"
-  },
-  {
-    "title": "Lorem ipsum dolor sit amet, consectetuer",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis",
+    "title": "Проблема созависимости в семье или паре",
+    "description": "<div>Найдем нездоровые стереотипы поведения – которые лежат в основе созависимости.</div><div>Укрепим положительный образ себя. Создадим гибкие и устойчивые границы для гармоничных отношений.</div>",
     "icon": "topics-masks"
   },
   {
-    "title": "Lorem ipsum dolor sit amet, consectetuer",
-    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis",
-    "icon": "topics-people"
+    "title": "Взаимоотношения с партнером, детьми и родителями",
+    "description": "<div>Научимся продуктивно проживать конфликты.</div><div>Внедрим эффективные навыки общения.<br<Натренируем навык оказывать эмоциональную поддержку близким.</div>",
+    "icon": "topics-love"
+  },
+  {
+    "title": "Консультирую родственников людей с деменцией",
+    "description": "Выпускаю рабочие тетради для тренировки памяти, внимания, мышления.",
+    "icon": "topics-care"
   }
 ]
